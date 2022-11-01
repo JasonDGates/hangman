@@ -77,12 +77,14 @@ const LEFT_LEG = (
 
 export default function HangmanDrawing() {
   return <div style={{position: 'relative'}}>
+    {/* BODY */}
     {HEAD}
     {BODY}
     {RIGHT_ARM}
     {LEFT_ARM}
     {RIGHT_LEG}
     {LEFT_LEG}
+
     {/* Hangman's Noose */}
     <div style={{
       height: '50px',
