@@ -75,15 +75,16 @@ const LEFT_LEG = (
   }}></div>
 )
 
-export default function HangmanDrawing() {
+const BODY_PARTS = [HEAD, BODY, LEFT_ARM, RIGHT_ARM, LEFT_LEG, RIGHT_LEG];
+
+type HangmanDrawingProps = {
+  numberOfGuesses: number
+}
+
+export default function HangmanDrawing({ numberOfGuesses }: HangmanDrawingProps) {
   return <div style={{position: 'relative'}}>
     {/* BODY */}
-    {HEAD}
-    {BODY}
-    {RIGHT_ARM}
-    {LEFT_ARM}
-    {RIGHT_LEG}
-    {LEFT_LEG}
+    {BODY_PARTS.slice(0, numberOfGuesses)}
 
     {/* Hangman's Noose */}
     <div style={{
