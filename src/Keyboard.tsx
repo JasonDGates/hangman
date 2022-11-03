@@ -34,7 +34,7 @@ type KeyboardProps = {
   addGuessedLetter: (letter: string) => void
 }
 
-export default function Keyboard({ activeLetters, inactiveLetters, addGuessedLetter}) {
+export default function Keyboard({ activeLetters, inactiveLetters, addGuessedLetter}: KeyboardProps) {
   return <div style={{
     display: 'grid',
     gridTemplateColumns: 'repeat(auto-fit, minmax(75px, 1fr))',
@@ -48,7 +48,7 @@ export default function Keyboard({ activeLetters, inactiveLetters, addGuessedLet
           ${styles.btn}
           ${isActive ? styles.active : ""}
           ${isInactive ? styles.inactive : ""}
-        `} key={key}>{key}</button>
+        `} disabled={isActive || isInactive} key={key}>{key}</button>
       )
     })}
   </div>
