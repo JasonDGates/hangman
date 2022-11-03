@@ -28,7 +28,13 @@ const KEYS = [
   "z",
 ]
 
-export default function Keyboard() {
+type KeyboardProps = {
+  activeLetters: string[]
+  inactiveLetters: string[]
+  addGuessedLetter: (letter: string) => void
+}
+
+export default function Keyboard({ activeLetters, inactiveLetters, addGuessedLetter}) {
   return <div style={{
     display: 'grid',
     gridTemplateColumns: 'repeat(auto-fit, minmax(75px, 1fr))',
