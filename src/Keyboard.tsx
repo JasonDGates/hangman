@@ -42,7 +42,7 @@ export default function Keyboard({ activeLetters, inactiveLetters, addGuessedLet
   }}>
     {KEYS.map(key => {
       return (
-        <button className={styles.btn} key={key}>{key}</button>
+        <button onClick={() => addGuessedLetter(key)} className={styles.btn} key={key}>{key}</button>
       )
     })}
   </div>
